@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 const CsvFileReader = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setloading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const [postsPerPage] = useState(10);
 
   const processCSV = (str, delim = ",") => {
@@ -35,17 +35,16 @@ const CsvFileReader = () => {
           setloading(false);
         }));
 
-      reader.readAsText(file);
+      reader.readAsDataURL(file);
     };
     fetchPosts();
   }, []);
 
-  const indexofLastPost =currentPage * postsPerPage;
-  const indexofFirstPost =indexofLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexofFirstPost,indexofLastPost);
+  const pageVisited =currentPage * postsPerPage;
+  const currentPosts = posts.slice(pageVisited,pageVisited+postsPerPage);
   
-  const paginate = (page) => {
-      setCurrentPage(page)
+  const paginate = ({selected}) => {
+      setCurrentPage(selected)
   };
 
   return (

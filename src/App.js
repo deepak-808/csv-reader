@@ -1,8 +1,8 @@
-import CsvFileReader from './Components/CsvFileReader';
+import CsvFileReader from "./Components/CsvFileReader";
 
 function App() {
   return (
-    <CsvFileReader/>
+      <CsvFileReader/>
   );
 }
 
