@@ -7,7 +7,7 @@ const CsvFileReader = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setloading] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(20);
 
   const processCSV = (str, delim = ",") => {
     const headers = str.slice(0, str.indexOf("\n")).split(delim);
