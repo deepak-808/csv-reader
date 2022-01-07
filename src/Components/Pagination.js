@@ -7,7 +7,7 @@ const Pagination = ({ postPerpage, totalPosts, paginate }) => {
       pageCount={pageNumber}
       previousLabel={"Previous"}
       nextLabel={"Next"}
-      marginPagesDisplayed={6}
+      marginPagesDisplayed={4}
       onPageChange={paginate}
       containerClassName="pagination justify-content-center"
       pageClassName="page-item"
