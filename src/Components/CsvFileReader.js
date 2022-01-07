@@ -89,7 +89,6 @@ const CsvFileReader = () => {
       <Posts
         sorting={sorting}
         posts={onSearch(currentPosts)}
-        setPosts={setPosts}
         loading={loading}
       />
       <Pagination
